@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" >
+        <div class="my_button">
+          <button type="button" class="btn btn-dark"><h1>Contact Me</h1></button>
+
+        </div>
+
+        <div class="jumbotron">
+          <div class="contact_form">
+            {# {% block title %}<h1>Contact Details</h1> {{ block.super }}{% endblock %} #}
+                  {# <h1>Contact Form</h1> #}
+
+                    <form role="form" action="" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn btn-dark" type="submit"><strong>Submit</strong></button>
+                    </form>
+
+
+          </div>
+</div>
+
+
+</div>
+
+{% endblock %}

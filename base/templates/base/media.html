@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style media="screen">
+  th,td{
+    border: 1px black solid;
+  }
+</style>
+<div class="jumbotron">
+  <table>
+    <tr>
+      <th>Sr. No.</th>
+      <th>Subject Name</th>
+      <th>Topic Name</th>
+      <th>Description</th>
+      <th>Link</th>
+    </tr>
+
+    {% for topics in topic %}
+    <tr>
+      <td>{{topics.id}}</td>
+      <td>{{topics.Subject_Name}}</td>
+      <td>{{topics.Topic_Name}}</td>
+      <td>{{topics.Description}}</td>
+      <td><a href="{{topics.Link}}">{{topics.Link}}</a></td>
+
+    {% endfor %}
+    </tr>
+  </table>
+</div>
+
+
+{% endblock %}
